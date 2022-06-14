@@ -8,13 +8,15 @@ fname = sys.argv[1]
 
 try:
 	csv_file = open(fname, 'r')
+	csv_file_reader = csv.DictReader(csv_file)
+
+	for row in csv_file_reader:
+		print(f"{row['url']} | {row['username']} | {row['password']}")
+	
+	csv_file.close()
+	
 except FileNotFoundError:
 	print(f"file '{fname}' not found")
 	sys.exit(2)
-
-csv_file_reader = csv.DictReader(csv_file)
-
-for row in csv_file_reader:
-	print(f"{row['url']} | {row['username']} | {row['password']}")
-
-csv_file.close()
+except KeyError:
+    print(f"file '{fname}' is not firefox password format file")
