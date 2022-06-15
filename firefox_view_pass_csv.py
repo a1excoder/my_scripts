@@ -19,5 +19,5 @@ except FileNotFoundError:
 	print(f"file '{fname}' not found")
 	sys.exit(2)
 except KeyError:
-    print(f"file '{fname}' is not firefox password format file")
-    sys.exit(3)
+	print(f"file '{fname}' is not firefox password format file")
+	sys.exit(3)
