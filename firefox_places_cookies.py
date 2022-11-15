@@ -69,7 +69,7 @@ def write_places_to_file(dir):
 	finally:
 		if conn:
 			conn.close()
-			file.close()
+		file.close()
 
 
 def write_cookies_to_file(dir):
@@ -100,7 +100,7 @@ def write_cookies_to_file(dir):
 	finally:
 		if conn:
 			conn.close()
-			file.close()
+		file.close()
 
 
 if __name__ == '__main__':
